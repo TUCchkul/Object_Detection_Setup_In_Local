@@ -104,3 +104,7 @@ python generate_tfrecord.py -x images/train -l annotations/label_map.pbtxt -o an
 ```bash
 python generate_tfrecord.py -x images/test -l annotations/label_map.pbtxt -o annotations/test.record
 ```
+# Configuring a training job 
+
+## Go to [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md) and download [SSD ResNet50 V1 FPN 640x640 (RetinaNet50)](http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz) model 
+- extract the download model into training_demo/pre-trained-model directory
