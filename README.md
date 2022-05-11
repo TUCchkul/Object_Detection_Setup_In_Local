@@ -75,3 +75,32 @@ cd workspace/training_demo
 mkdir -p annotations exported-models models pre-trained-models images/test images/train
 ```
 
+## Create label map file in training_demo/annotations
+and write content as -
+```bash
+item{
+    id:1
+    name:'helmet'
+}
+item{
+    id:2
+    name:'head'
+}
+item{
+    id:3
+    name:'person'
+}
+```
+## curl the generate_tfrecord file into root of training_demo directory
+```bash
+curl https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/_downloads/da4babe668a8afb093cc7776d7e630f3/generate_tfrecord.py > generate_tfrecord.py
+```
+## generate tfrecord
+### for train dataset
+```bash
+python generate_tfrecord.py -x images/train -l annotations/label_map.pbtxt -o annotations/train.record
+```
+### for test datasets
+```bash
+python generate_tfrecord.py -x images/test -l annotations/label_map.pbtxt -o annotations/test.record
+```
